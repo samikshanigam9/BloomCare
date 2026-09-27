@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rose_primary">#D96588</color>
+    <color name="rose_dark">#B84468</color>
+    <color name="rose_light">#F5B8CA</color>
+    <color name="blush_50">#FFF8FA</color>
+    <color name="blush_100">#FDEBF1</color>
+    <color name="blush_200">#F9DCE6</color>
+    <color name="mauve">#8D5A73</color>
+    <color name="text_primary">#2D2430</color>
+    <color name="text_secondary">#776A72</color>
+    <color name="white">#FFFFFF</color>
+    <color name="success">#4F8A6A</color>
+</resources>
