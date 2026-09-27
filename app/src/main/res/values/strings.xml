@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BloomCare</string>
+    <string name="firebase_database_url" translatable="false">https://YOUR_PROJECT_ID-default-rtdb.REGION.firebasedatabase.app</string>
+    <string name="greeting">Welcome back</string>
+    <string name="tagline">Your recovery, one gentle step at a time.</string>
+    <string name="wellness_score">Wellness Score</string>
+    <string name="recovery_day">Recovery Day</string>
+    <string name="todays_progress">Today\'s Progress</string>
+    <string name="todays_wellness">TODAY\'S WELLNESS</string>
+    <string name="hydration">Hydration</string>
+    <string name="workout">Workout Planner</string>
+    <string name="weight">Weight &amp; Progress</string>
+    <string name="recovery">Recovery Tracker</string>
+    <string name="progress">Progress</string>
+    <string name="profile">Profile</string>
+    <string name="ai_coach">AI Wellness Coach</string>
+    <string name="generate_ai_insight">Generate AI Insight</string>
+    <string name="medical_disclaimer">BloomCare provides wellness support, not medical diagnosis.</string>
+</resources>
