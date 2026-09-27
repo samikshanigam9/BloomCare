@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blush_50">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView android:id="@+id/btnBack" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="‹ Back" android:textColor="@color/rose_dark" android:textSize="16sp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="22dp" android:text="Recovery Tracker"
+            android:textColor="@color/text_primary" android:textSize="28sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tvRecoveryScore" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" android:layout_marginTop="24dp"
+            android:text="--" android:textColor="@color/rose_dark" android:textSize="42sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tvRecoveryStatus" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" android:text="Complete a check-in" android:textColor="@color/text_secondary"/>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp"
+            android:hint="Sleep hours">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etSleep"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Energy level" android:textColor="@color/text_primary" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvEnergyValue" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="7 / 10" android:textColor="@color/rose_dark"/>
+        <SeekBar android:id="@+id/seekEnergy" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="10" android:progress="7"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="18dp" android:text="Mood" android:textColor="@color/text_primary" android:textStyle="bold"/>
+        <RadioGroup android:id="@+id/groupMood" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/radioMoodGood" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Good"/>
+            <RadioButton android:id="@+id/radioMoodOkay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Okay" android:checked="true"/>
+            <RadioButton android:id="@+id/radioMoodLow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Low"/>
+        </RadioGroup>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="18dp" android:text="Pain / discomfort" android:textColor="@color/text_primary" android:textStyle="bold"/>
+        <RadioGroup android:id="@+id/groupPain" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/radioPainNone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="None"/>
+            <RadioButton android:id="@+id/radioPainMild" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mild" android:checked="true"/>
+            <RadioButton android:id="@+id/radioPainModerate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Moderate"/>
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnSaveRecovery"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="Save Recovery Check-in" app:cornerRadius="16dp"/>
+    </LinearLayout>
+</ScrollView>
