@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blush_50">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView android:id="@+id/btnBack" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="‹ Back" android:textColor="@color/rose_dark" android:textSize="16sp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="22dp" android:text="Workout Planner"
+            android:textColor="@color/text_primary" android:textSize="28sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tvWorkoutName" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="26dp" android:text="Gentle Stretching"
+            android:textColor="@color/rose_dark" android:textSize="22sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tvWorkoutDetails" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="15 min • Low Intensity" android:textColor="@color/text_secondary"/>
+
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardStretching"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            app:cardCornerRadius="18dp" app:strokeColor="@color/rose_light" app:strokeWidth="1dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="18dp"
+                android:text="Gentle Stretching&#10;15 min • Low Intensity" android:textColor="@color/text_primary"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardWalking"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            app:cardCornerRadius="18dp" app:strokeColor="@color/rose_light" app:strokeWidth="1dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="18dp"
+                android:text="Light Walking&#10;20 min • Low Intensity" android:textColor="@color/text_primary"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardBreathing"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            app:cardCornerRadius="18dp" app:strokeColor="@color/rose_light" app:strokeWidth="1dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="18dp"
+                android:text="Breathing Exercise&#10;10 min • Relaxation" android:textColor="@color/text_primary"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnCompleteWorkout"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="Mark Complete" app:cornerRadius="16dp"/>
+    </LinearLayout>
+</ScrollView>
