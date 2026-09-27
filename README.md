@@ -1,30 +1,44 @@
-# BloomCare
+# BloomCare - Smart Postpartum Fitness Tracker
 
-BloomCare is a Java Android wellness-tracking app that combines everyday recovery data with Firebase-backed persistence and personalized AI wellness guidance.
+**Resume project name:** Smart Postpartum Fitness Tracker  
+**Project name:** BloomCare - Smart Postpartum Fitness Tracker
 
-The app lets a signed-in user track hydration, weight, gentle workouts, sleep, energy, mood, pain, and a simple recovery score. Firebase Authentication keeps accounts separate, Realtime Database stores user-specific current values and timestamped history, and Firebase AI Logic generates a concise wellness insight from the user's saved data.
+BloomCare - Smart Postpartum Fitness Tracker is a Java Android wellness application focused on postpartum fitness and recovery support. It combines user-specific wellness tracking, Firebase-backed persistence, progress history, and personalized AI wellness guidance.
 
-> BloomCare is a wellness-support project, not a medical device. Its recovery score is an app-defined indicator and is not clinically validated. AI output is constrained to general wellness guidance and is instructed not to diagnose conditions or prescribe medication.
+The app lets an authenticated user track hydration, weight, gentle workouts, sleep, energy, mood, pain/discomfort, and an app-level recovery score. Firebase Authentication keeps accounts separate, Firebase Realtime Database stores current values and timestamped history, and Firebase AI Logic generates personalized wellness insights from the user's saved data.
 
-## Highlights
+> BloomCare is a wellness-support portfolio project, not a medical device. Its recovery score is an app-defined wellness indicator and is not clinically validated. AI output is constrained to general wellness guidance and is instructed not to diagnose conditions or prescribe medication.
 
-- **Java Android app** using XML layouts and Material Components
-- **Firebase Authentication** with email/password sign-in and account creation
-- **User-scoped Realtime Database** structure under `users/{uid}`
-- **Hydration, weight, workout, and recovery tracking** with timestamped history
-- **Progress & History** screen showing recent records
-- **Personalized AI wellness coach** powered by Firebase AI Logic / Gemini
-- **AI insight history** saved in Firebase
-- **Firebase App Check**
-  - Debug provider for emulator/development builds
-  - Play Integrity provider for release builds
-- **Per-user Realtime Database rules** to prevent cross-account reads/writes
-- **120-record synthetic benchmark** used during testing; benchmark code removed from the production project
-- **JUnit coverage for the recovery-score calculation and status thresholds**
+## Resume-Aligned Highlights
+
+- Developed a **Java Android application with 6+ wellness features**, including workout planning, hydration tracking, weight tracking, recovery monitoring, progress/history, profile management, and AI wellness insights.
+- Integrated **Firebase Authentication and Firebase Realtime Database** for user-specific storage, real-time synchronization, and timestamped wellness history.
+- Implemented a **modular object-oriented Java architecture** across independent Android activities and reusable recovery-score logic.
+- Added **personalized AI wellness recommendations** using Firebase AI Logic / Gemini based on saved hydration, sleep, energy, recovery, workout, weight, and profile data.
+- Added **Firebase App Check** and per-user Realtime Database security rules.
+- Tested Firebase persistence with **120 synthetic wellness records** during development.
+
+## Core Features
+
+- Email/password account creation and login
+- User-specific Firebase data under `users/{uid}`
+- Hydration tracker
+- Weight and progress tracker
+- Gentle workout planner
+- Recovery tracker
+- Sleep, energy, mood, and discomfort inputs
+- App-level recovery score
+- Progress & History screen
+- User profile management
+- Personalized AI wellness coach
+- AI insight history
+- Firebase App Check
+- Per-user database access rules
 
 ## Tech Stack
 
 - Java 11
+- Android Studio
 - Android SDK / XML Views
 - Material Components
 - Firebase Authentication
@@ -33,8 +47,9 @@ The app lets a signed-in user track hydration, weight, gentle workouts, sleep, e
 - Gemini
 - Firebase App Check
 - Google Play Integrity
+- JUnit
 
-## Core Flow
+## Architecture
 
 ```text
 Login / Create Account
@@ -97,7 +112,7 @@ users
 
 ## AI Personalization
 
-When the user taps **Generate AI Insight**, BloomCare reads the currently saved profile and wellness values for the authenticated user and builds a constrained prompt for Gemini.
+When the user taps **Generate AI Insight**, the app reads the authenticated user's currently saved wellness data and builds a constrained prompt for Gemini.
 
 The prompt can use:
 - Name, age, and height when available
@@ -108,7 +123,7 @@ The prompt can use:
 - Recovery score
 - Latest workout and completion status
 
-The user's email and Firebase UID are not sent in the prompt. The prompt explicitly instructs the model not to invent missing data, diagnose disease, prescribe medication, or represent the app's recovery score as a clinical measurement.
+The user's email and Firebase UID are not included in the AI prompt. The prompt explicitly instructs the model not to invent missing data, diagnose disease, prescribe medication, or represent the recovery score as a clinical measurement.
 
 Generated output is displayed on the dashboard and persisted as the latest insight plus a timestamped AI-history entry.
 
@@ -131,8 +146,8 @@ Realtime Database rules are included in [`database.rules.json`](database.rules.j
 
 App Check is initialized before other Firebase usage through `BloomCareApplication`.
 
-- `src/debug` installs the App Check **Debug Provider** for emulator development.
-- `src/release` installs the **Play Integrity** provider.
+- `src/debug` uses the App Check **Debug Provider** for emulator development.
+- `src/release` uses **Play Integrity**.
 
 Debug App Check tokens must never be committed to the repository.
 
@@ -144,14 +159,19 @@ Debug App Check tokens must never be committed to the repository.
 4. Create a Firebase Realtime Database.
 5. Enable Firebase AI Logic with the Gemini Developer API.
 6. Register the Android app in Firebase App Check.
-7. Copy `app/google-services.example.json` to `app/google-services.json` and replace the placeholders with the values from your Firebase project. In normal Firebase setup, you can instead download the real `google-services.json` directly from Firebase Console.
-8. In `app/src/main/res/values/strings.xml`, replace the placeholder value of `firebase_database_url` with your own Realtime Database URL.
-9. Publish the rules in `database.rules.json` to Realtime Database.
+7. Copy `app/google-services.example.json` to `app/google-services.json` and replace the placeholders with your Firebase project values.
+8. In `app/src/main/res/values/strings.xml`, replace the placeholder `firebase_database_url` with your Realtime Database URL.
+9. Publish the rules in `database.rules.json`.
 10. For emulator development, register the App Check debug token shown in Logcat. Do not commit or share it.
 
 ## Tests
 
-The recovery-score logic is isolated in `RecoveryScoreCalculator` so it can be tested without an Android UI dependency. Unit tests cover the high-score case, the 65/100 moderate-recovery example, and status boundaries at 80/60.
+The recovery-score logic is isolated in `RecoveryScoreCalculator` for unit testing.
+
+Current tests cover:
+- Strong recovery input
+- The 65/100 moderate-recovery example
+- Status thresholds at 80 and 60
 
 Run locally with:
 
@@ -161,13 +181,13 @@ Run locally with:
 
 ## Benchmark
 
-BloomCare was tested with **120 synthetic wellness records** stored under a separate benchmark branch during development.
+The project was tested with **120 synthetic wellness records** stored under a separate benchmark branch during development.
 
 Observed in one Pixel 7 emulator / API 36 test run:
 - Write of 120 synthetic records: **2436 ms**
 - Read of 120 records: **120 ms**
 
-These are single-run development measurements, not production latency guarantees. Network conditions, emulator state, backend region, and device performance can change the results. The temporary benchmark-generation code was removed after the measurement.
+These are single-run development measurements, not production latency guarantees. Network conditions, emulator/device performance, cache state, backend region, and other runtime factors can affect latency.
 
 See [`docs/BENCHMARK.md`](docs/BENCHMARK.md) for methodology and limitations.
 
@@ -191,6 +211,14 @@ app/src/debug/java/com/samiksha/bloomcare/
 app/src/release/java/com/samiksha/bloomcare/
 `-- BloomCareApplication.java
 ```
+
+## Resume-Ready Project Entry
+
+**BloomCare - Smart Postpartum Fitness Tracker | Java, Android Studio, Firebase, Gemini**
+
+- Developed a Java Android application with 6+ wellness features, including workout planning, hydration tracking, weight tracking, recovery monitoring, progress history, and personalized AI wellness insights.
+- Integrated Firebase Authentication and Realtime Database for user-specific storage, real-time synchronization, and timestamped wellness records.
+- Implemented personalized AI wellness recommendations using Firebase AI Logic / Gemini, with Firebase App Check and per-user database security rules.
 
 ## Current Scope
 
