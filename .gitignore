@@ -1,0 +1,26 @@
+# Gradle / build output
+.gradle/
+**/build/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local machine configuration
+local.properties
+.DS_Store
+
+# Firebase project-specific client configuration
+app/google-services.json
+
+# Signing material
+*.jks
+*.keystore
+keystore.properties
+
+# Logs / temporary files
+*.log
+*.tmp
