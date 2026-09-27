@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BloomCare</string>
+    <string name="app_name">BloomCare - Smart Postpartum Fitness Tracker</string>
     <string name="firebase_database_url" translatable="false">https://YOUR_PROJECT_ID-default-rtdb.REGION.firebasedatabase.app</string>
     <string name="greeting">Welcome back</string>
     <string name="tagline">Your recovery, one gentle step at a time.</string>
