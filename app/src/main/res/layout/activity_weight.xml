@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blush_50">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView android:id="@+id/btnBack" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="‹ Back" android:textColor="@color/rose_dark" android:textSize="16sp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="22dp" android:text="Weight &amp; Progress"
+            android:textColor="@color/text_primary" android:textSize="28sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tvCurrentWeight" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" android:text="62.5 kg" android:textColor="@color/rose_dark"
+            android:textSize="38sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tvWeightChange" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="No change from previous entry" android:textColor="@color/text_secondary"/>
+
+        <TextView android:id="@+id/tvPreviousWeight" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="24dp" android:text="Previous: -- kg" android:textColor="@color/text_primary"/>
+
+        <TextView android:id="@+id/tvDifference" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Change: -- kg" android:textColor="@color/text_secondary"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" android:hint="Current weight (kg)">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etWeight" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveWeight" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:text="Save Weight" app:cornerRadius="16dp"/>
+    </LinearLayout>
+</ScrollView>
