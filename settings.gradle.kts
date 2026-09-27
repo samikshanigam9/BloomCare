@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BloomCare"
+rootProject.name = "BloomCare-Smart-Postpartum-Fitness-Tracker"
 include(":app")
